@@ -1,6 +1,6 @@
 package it.pagopa.interop.signalhub.history.cleanup.serviceImpl;
 
-import it.pagopa.interop.signalhub.history.cleanup.conifg.AppConfig;
+import it.pagopa.interop.signalhub.history.cleanup.config.AppConfig;
 import it.pagopa.interop.signalhub.history.cleanup.repository.SignalRepository;
 import it.pagopa.interop.signalhub.history.cleanup.service.impl.SignalServiceImpl;
 import org.junit.jupiter.api.Test;

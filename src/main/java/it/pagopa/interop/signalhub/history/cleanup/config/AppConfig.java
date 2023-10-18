@@ -1,4 +1,4 @@
-package it.pagopa.interop.signalhub.history.cleanup.conifg;
+package it.pagopa.interop.signalhub.history.cleanup.config;
 
 import lombok.Getter;
 import lombok.Setter;

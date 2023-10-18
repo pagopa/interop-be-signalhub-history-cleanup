@@ -1,6 +1,5 @@
 package it.pagopa.interop.signalhub.history.cleanup.config;
 
-import it.pagopa.interop.signalhub.history.cleanup.conifg.AppConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

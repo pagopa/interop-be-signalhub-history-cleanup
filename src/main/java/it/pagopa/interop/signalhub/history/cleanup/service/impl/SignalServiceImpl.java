@@ -1,19 +1,13 @@
 package it.pagopa.interop.signalhub.history.cleanup.service.impl;
 
-import it.pagopa.interop.signalhub.history.cleanup.conifg.AppConfig;
+import it.pagopa.interop.signalhub.history.cleanup.config.AppConfig;
 import it.pagopa.interop.signalhub.history.cleanup.repository.SignalRepository;
 import it.pagopa.interop.signalhub.history.cleanup.service.SignalService;
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
-import reactor.core.publisher.Mono;
 
-import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
