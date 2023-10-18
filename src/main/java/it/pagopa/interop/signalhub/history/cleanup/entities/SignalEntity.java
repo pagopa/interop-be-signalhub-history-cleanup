@@ -11,7 +11,6 @@ import org.springframework.data.relational.core.mapping.Table;
 import java.io.Serializable;
 import java.time.Instant;
 
-
 @Getter
 @Setter
 @Table("SIGNAL")

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Repository
 public interface SignalRepository extends ReactiveCrudRepository<SignalEntity, Long> {
 
-    @Query("delete from signal s where  s.tmst_Insert < :date")
+    @Query("delete from signal s where s.tmst_Insert < :date")
     Mono<Void> deleteByDateBefore(LocalDate date );
 
 }
