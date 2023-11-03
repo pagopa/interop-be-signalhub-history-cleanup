@@ -24,9 +24,9 @@ public class SignalServiceImpl implements SignalService {
 
     public void cleanSignal() {
         LocalDate pastDate = LocalDate.now().minus(Long.parseLong(appConfig.getDelayDays()), ChronoUnit.DAYS);
-        signalRepository.deleteByDateBefore(pastDate)
+        signalRepository.deleteByDate(pastDate)
                 .doOnSuccess(x -> log.info("clean complete with success"))
-                .doOnError(x ->   log.error("Find an error {}",x.getMessage()))
+                .doOnError(ex ->   log.error("Find an error {}",ex))
                 .subscribe();
     }
 

@@ -1,12 +1,11 @@
 package it.pagopa.interop.signalhub.history.cleanup.entity;
 
-import it.pagopa.interop.signalhub.history.cleanup.entities.SignalEntity;
+import it.pagopa.interop.signalhub.history.cleanup.entities.Signal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.time.Instant;
 
@@ -14,60 +13,60 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @ExtendWith(MockitoExtension.class)
-public class SignalEntityTest {
+public class SignalTest {
 
     @InjectMocks
-    private SignalEntity signalEntity;
+    private Signal signal;
 
     @BeforeEach
     public void setUp() {
-        signalEntity = new SignalEntity();
+        signal = new Signal();
     }
 
     @Test
     public void testId() {
         Long id = 1L;
-        signalEntity.setId(id);
-        assertEquals(id, signalEntity.getId());
+        signal.setId(id);
+        assertEquals(id, signal.getId());
     }
     @Test
     public void testSignalId() {
         Long signalId = 123L;
-        signalEntity.setSignalId(signalId);
-        assertEquals(signalId, signalEntity.getSignalId());
+        signal.setSignalId(signalId);
+        assertEquals(signalId, signal.getSignalId());
     }
     @Test
     public void testObjectId() {
         String objectId = "testObject";
-        signalEntity.setObjectId(objectId);
-        assertEquals(objectId, signalEntity.getObjectId());
+        signal.setObjectId(objectId);
+        assertEquals(objectId, signal.getObjectId());
     }
 
     @Test
     public void testEserviceId() {
         String eserviceId = "testEservice";
-        signalEntity.setEserviceId(eserviceId);
-        assertEquals(eserviceId, signalEntity.getEserviceId());
+        signal.setEserviceId(eserviceId);
+        assertEquals(eserviceId, signal.getEserviceId());
     }
     @Test
     public void testObjectType() {
         String objectType = "testType";
-        signalEntity.setObjectType(objectType);
-        assertEquals(objectType, signalEntity.getObjectType());
+        signal.setObjectType(objectType);
+        assertEquals(objectType, signal.getObjectType());
     }
 
     @Test
     public void testSignalType() {
         String signalType = "testSignal";
-        signalEntity.setSignalType(signalType);
-        assertEquals(signalType, signalEntity.getSignalType());
+        signal.setSignalType(signalType);
+        assertEquals(signalType, signal.getSignalType());
     }
 
     @Test
     public void testTmstInsert() {
         Instant tmstInsert = Instant.now();
-        signalEntity.setTmstInsert(tmstInsert);
-        assertEquals(tmstInsert, signalEntity.getTmstInsert());
+        signal.setTmstInsert(tmstInsert);
+        assertEquals(tmstInsert, signal.getTmstInsert());
     }
 
 }

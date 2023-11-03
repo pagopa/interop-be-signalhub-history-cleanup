@@ -11,12 +11,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import reactor.core.publisher.Mono;
 
-import java.io.FileNotFoundException;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
 @ExtendWith(MockitoExtension.class)
-public class SignalServiceImplTest {
+class SignalServiceImplTest {
     @InjectMocks
     private SignalServiceImpl signalService;
 
@@ -27,16 +23,10 @@ public class SignalServiceImplTest {
     private AppConfig appConfig;
 
     @Test
-    void testDeleteSignal() throws FileNotFoundException {
-        LocalDate expectedDate = LocalDate.now().minus(30, ChronoUnit.DAYS);
-
+    void testDeleteSignal() {
         Mockito.when(appConfig.getDelayDays()).thenReturn("30");
-
-        Mockito.when(signalRepository.deleteByDateBefore(Mockito.any())).thenReturn(Mono.empty());
+        Mockito.when(signalRepository.deleteByDate(Mockito.any())).thenReturn(Mono.empty());
         signalService.cleanSignal();
-        Mockito.verify(signalRepository, Mockito.times(1)).deleteByDateBefore(Mockito.any());
-
-
-
+        Mockito.verify(signalRepository, Mockito.times(1)).deleteByDate(Mockito.any());
     }
 }

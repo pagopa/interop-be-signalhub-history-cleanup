@@ -14,7 +14,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @Table("SIGNAL")
-public class SignalEntity implements Serializable {
+public class Signal implements Serializable {
     @Id
     @Column("id")
     private Long id;
