@@ -14,10 +14,8 @@ public class AppConfigTest {
     AppConfig appConfig;
     
     @Test
-    public void testDelayDays() {
-
+    void testDelayDays() {
         appConfig.setDelayDays("10");
-
         assertEquals("10", appConfig.getDelayDays());
     }
 }

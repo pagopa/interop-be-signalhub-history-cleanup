@@ -1,4 +1,4 @@
-package it.pagopa.interop.signalhub.history.cleanup.serviceImpl;
+package it.pagopa.interop.signalhub.history.cleanup.service.impl;
 
 import it.pagopa.interop.signalhub.history.cleanup.config.AppConfig;
 import it.pagopa.interop.signalhub.history.cleanup.repository.SignalRepository;

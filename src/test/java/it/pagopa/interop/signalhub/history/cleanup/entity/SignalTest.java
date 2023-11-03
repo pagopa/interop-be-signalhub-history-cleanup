@@ -13,57 +13,57 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @ExtendWith(MockitoExtension.class)
-public class SignalTest {
+class SignalTest {
 
     @InjectMocks
     private Signal signal;
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         signal = new Signal();
     }
 
     @Test
-    public void testId() {
+    void testId() {
         Long id = 1L;
         signal.setId(id);
         assertEquals(id, signal.getId());
     }
     @Test
-    public void testSignalId() {
+    void testSignalId() {
         Long signalId = 123L;
         signal.setSignalId(signalId);
         assertEquals(signalId, signal.getSignalId());
     }
     @Test
-    public void testObjectId() {
+    void testObjectId() {
         String objectId = "testObject";
         signal.setObjectId(objectId);
         assertEquals(objectId, signal.getObjectId());
     }
 
     @Test
-    public void testEserviceId() {
+    void testEserviceId() {
         String eserviceId = "testEservice";
         signal.setEserviceId(eserviceId);
         assertEquals(eserviceId, signal.getEserviceId());
     }
     @Test
-    public void testObjectType() {
+    void testObjectType() {
         String objectType = "testType";
         signal.setObjectType(objectType);
         assertEquals(objectType, signal.getObjectType());
     }
 
     @Test
-    public void testSignalType() {
+    void testSignalType() {
         String signalType = "testSignal";
         signal.setSignalType(signalType);
         assertEquals(signalType, signal.getSignalType());
     }
 
     @Test
-    public void testTmstInsert() {
+    void testTmstInsert() {
         Instant tmstInsert = Instant.now();
         signal.setTmstInsert(tmstInsert);
         assertEquals(tmstInsert, signal.getTmstInsert());
