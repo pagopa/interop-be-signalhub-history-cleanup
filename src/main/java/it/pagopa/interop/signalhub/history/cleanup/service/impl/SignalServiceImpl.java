@@ -20,7 +20,7 @@ public class SignalServiceImpl implements SignalService {
     @Autowired
     private AppConfig appConfig;
 
-    public void deleteSignal() {
+    public void cleanSignal() {
         LocalDate pastDate = LocalDate.now().minus(Long.parseLong(appConfig.getDelayDays()), ChronoUnit.DAYS);
 
         signalRepository.deleteByDateBefore(pastDate)

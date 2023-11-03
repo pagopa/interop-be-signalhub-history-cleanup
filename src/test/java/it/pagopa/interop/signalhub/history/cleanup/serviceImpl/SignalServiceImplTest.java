@@ -33,7 +33,7 @@ public class SignalServiceImplTest {
         Mockito.when(appConfig.getDelayDays()).thenReturn("30");
 
         Mockito.when(signalRepository.deleteByDateBefore(Mockito.any())).thenReturn(Mono.empty());
-        signalService.deleteSignal();
+        signalService.cleanSignal();
         Mockito.verify(signalRepository, Mockito.times(1)).deleteByDateBefore(Mockito.any());
 
 
