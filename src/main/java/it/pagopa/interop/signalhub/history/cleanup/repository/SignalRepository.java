@@ -15,5 +15,3 @@ public interface SignalRepository extends ReactiveCrudRepository<SignalEntity, L
     Mono<Void> deleteByDateBefore(LocalDate date );
 
 }
-
-

@@ -6,12 +6,14 @@ import it.pagopa.interop.signalhub.history.cleanup.service.SignalService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 @Slf4j
 @AllArgsConstructor
+@Service
 public class SignalServiceImpl implements SignalService {
 
     @Autowired
@@ -22,9 +24,8 @@ public class SignalServiceImpl implements SignalService {
 
     public void cleanSignal() {
         LocalDate pastDate = LocalDate.now().minus(Long.parseLong(appConfig.getDelayDays()), ChronoUnit.DAYS);
-
         signalRepository.deleteByDateBefore(pastDate)
-                .doOnSuccess(x -> log.info("record success"))
+                .doOnSuccess(x -> log.info("clean complete with success"))
                 .doOnError(x ->   log.error("Find an error {}",x.getMessage()))
                 .subscribe();
     }
