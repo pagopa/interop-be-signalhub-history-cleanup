@@ -22,9 +22,9 @@ public class SignalServiceController {
         try {
             signalService.cleanSignal();
         }catch (PDNDBatchAlreadyExistException ex) {
-            log.info(ex.getMessage());
+            log.error("An error occurred ", ex);
         }
-
+        log.info("CleanSignal Ended: {}", dateTimeFormatter.format(LocalDateTime.now()));
     }
 
 
