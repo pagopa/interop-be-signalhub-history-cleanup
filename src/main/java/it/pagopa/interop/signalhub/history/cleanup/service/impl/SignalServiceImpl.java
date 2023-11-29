@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -23,10 +24,10 @@ public class SignalServiceImpl implements SignalService {
     private AppConfig appConfig;
 
     public void cleanSignal() {
-        LocalDate pastDate = LocalDate.now().minus(Long.parseLong(appConfig.getDelayDays()), ChronoUnit.DAYS);
+        Instant pastDate = Instant.now().minus(Long.parseLong(appConfig.getDelayDays()), ChronoUnit.DAYS);
         signalRepository.deleteByDate(pastDate)
                 .doOnSuccess(x -> log.info("clean complete with success"))
-                .doOnError(ex ->   log.error("Find an error {}",ex))
+                .doOnError(ex ->   log.error("Error on signal cleanup {}",ex))
                 .subscribe();
     }
 
