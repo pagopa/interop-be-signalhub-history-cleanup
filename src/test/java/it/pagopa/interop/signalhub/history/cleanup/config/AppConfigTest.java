@@ -8,14 +8,14 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class AppConfigTest {
+class AppConfigTest {
     
     @InjectMocks
     AppConfig appConfig;
     
     @Test
     void testDelayDays() {
-        appConfig.setDelayDays("10");
-        assertEquals("10", appConfig.getDelayDays());
+        appConfig.setDelayHours("10");
+        assertEquals("10", appConfig.getDelayHours());
     }
 }

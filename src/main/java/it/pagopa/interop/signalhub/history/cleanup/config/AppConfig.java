@@ -11,5 +11,5 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 public class AppConfig {
 
-    private String delayDays;
+    private String delayHours;
 }

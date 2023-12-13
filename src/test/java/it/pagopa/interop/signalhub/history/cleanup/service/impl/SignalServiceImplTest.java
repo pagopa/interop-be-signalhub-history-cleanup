@@ -2,7 +2,6 @@ package it.pagopa.interop.signalhub.history.cleanup.service.impl;
 
 import it.pagopa.interop.signalhub.history.cleanup.config.AppConfig;
 import it.pagopa.interop.signalhub.history.cleanup.repository.SignalRepository;
-import it.pagopa.interop.signalhub.history.cleanup.service.impl.SignalServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -24,7 +23,7 @@ class SignalServiceImplTest {
 
     @Test
     void testDeleteSignal() {
-        Mockito.when(appConfig.getDelayDays()).thenReturn("30");
+        Mockito.when(appConfig.getDelayHours()).thenReturn("30");
         Mockito.when(signalRepository.deleteByDate(Mockito.any())).thenReturn(Mono.empty());
         signalService.cleanSignal();
         Mockito.verify(signalRepository, Mockito.times(1)).deleteByDate(Mockito.any());
