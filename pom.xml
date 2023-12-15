@@ -175,12 +175,15 @@
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.10</version>
 				<configuration>
-
+					<excludes>
+						<exclude>**/config/**</exclude>
+						<exclude>**/execution/**</exclude>
+						<exclude>**/utility/**</exclude>
+						<exclude>**/SignalHubHistoryCleanupApplication.class</exclude>
+					</excludes>
 				</configuration>
 				<executions>
 					<execution>
-						<id>prepare-integration-tests</id>
-						<phase>pre-integration-test</phase>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>

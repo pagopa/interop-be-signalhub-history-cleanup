@@ -21,7 +21,7 @@ public class SignalServiceController {
         log.info("CleanSignal Started: {}", dateTimeFormatter.format(LocalDateTime.now()));
         try {
             signalService.cleanSignal();
-        }catch (PDNDBatchAlreadyExistException ex) {
+        } catch (PDNDBatchAlreadyExistException ex) {
             log.error("An error occurred ", ex);
         }
         log.info("CleanSignal Ended: {}", dateTimeFormatter.format(LocalDateTime.now()));
